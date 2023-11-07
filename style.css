@@ -1,0 +1,46 @@
+.loading-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1d5a9c7e;
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+
+  flex-direction: column;
+  gap: 1.5rem;
+
+  color: #191654;
+}
+
+svg {
+  height: 350px;
+  width: 350px;
+  stroke: white;
+  fill-opacity: 0;
+  stroke-width: 1px;
+  stroke-dasharray: 4500;
+  animation: draw 8s ease;
+}
+svg path {
+  fill-opacity: 0;
+  animation: load 1s ease-in forwards 1s;
+}
+@keyframes load {
+  100% {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 4500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
